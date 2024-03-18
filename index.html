@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+<style>
+    @import url("style.css");
+
+    @font-face {
+        font-family: sunday;
+        src: url(./Assets/vtcsundaykomix.ttf);
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        background: url(./Assets/background.png) no-repeat;
+        background-size: cover;
+        overflow: hidden;
+        font-family: sunday, sans-serif;
+    }
+
+    .maincontainer {
+        display: flex;
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .pagelist {
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+
+    .pagelist div {
+        background: #FFFB9B;
+        padding: 5px;
+        color: black;
+        margin: 2px 3px;
+        margin-top: 0;
+        border: 2px solid #FF9C00;
+        box-shadow: 2px 0px 0 black, -2px 0px 0 black, 2px 2px 0 black, -2px 2px 0 black;
+        cursor: pointer;
+        font-size: 19px;
+    }
+
+    .pagelist div:first-child {
+        box-shadow: 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black, -2px -2px 0 black;
+    }
+
+    .blank {
+        background: #323232 !important;
+        border: none !important;
+        cursor: default !important;
+    }
+
+    .blank p {
+        opacity: 0;
+        user-select: none;
+    }
+
+    .pagelist p {
+        margin: 0;
+    }
+
+    .pages {
+        margin: 15px;
+        margin-left: 0;
+        flex: 8;
+        background: #FFEDD2;
+        border-radius: 16px;
+    }
+
+    .singlepage {
+        margin: 15px;
+        overflow-y: auto;
+    }
+
+    .singlepage h1 {
+        font-weight: 300;
+        margin-top: 0;
+        margin-bottom: 2px;
+        font-size: 41px;
+    }
+
+    .singlepage h2 {
+        font-weight: 700;
+        padding-bottom: 3px;
+        font-size: 25px;
+        border-bottom: 1px solid black;
+    }
+</style>
+
+<body>
+    <div class="maincontainer">
+        <div class="pagelist">
+            <div onclick="openPage()" id="home">
+                <p>Home</p>
+            </div>
+            <div class="blank forcedblank">
+                <p>BLANK</p>
+            </div>
+        </div>
+        <div class="pages">
+            <div class="singlepage" id="Home" style="display: block;">
+                <center>
+                    <h1> Welcome to Patapon 3 Overhaul Wiki!</h1>
+                </center>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+    integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+<script src="/pagelist.js"></script>
+<script>
+    function readFileElement(file) {
+        var rawFile = new XMLHttpRequest();
+        rawFile.open("GET", file, false);
+        rawFile.onreadystatechange = function () {
+            if (rawFile.readyState === 4) {
+                if (rawFile.status === 200 || rawFile.status == 0) {
+                    var allText = rawFile.responseText;
+                    var pageName = file.split(/(\\|\/)/g).pop().replace(".txt", "");
+
+                    // create an element that will on click show the content
+                    var div = document.createElement("div");
+                    var paragraph = document.createElement("p");
+                    div.onclick = function () { openPage(pageName) };
+                    paragraph.textContent = pageName;
+
+                    // page element
+                    var div1 = document.createElement("div");
+
+                    var allTextFormatted = allText.replaceAll("<header>", "<h1>").replaceAll("</header>", "</h1>").replaceAll("<chapter>", "<h2>").replaceAll("</chapter>", "</h2>");
+
+                    div1.innerHTML = allTextFormatted;
+                    div1.classList = "singlepage";
+                    div1.id = pageName;
+                    div1.style.display = "none";
+
+                    div.append(paragraph);
+                    $(div).insertAfter($('.forcedblank'));
+                    $('.pages').append(div1);
+                }
+            }
+        }
+        rawFile.send(null);
+    }
+
+    pagelist.forEach((element) => {
+        readFileElement(element);
+    });
+
+    function openPage(element) {
+        var children = document.querySelector(".pages").children;
+        Array.from(children).forEach((child) => {
+            child.style.display = "none";
+        });
+        if (element != undefined) {
+            document.getElementById(element).style.display = "block";
+        }
+        else {
+            document.getElementById("Home").style.display = "block";
+        }
+    }
+</script>
+
+</html>
