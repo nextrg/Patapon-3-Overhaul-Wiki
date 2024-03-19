@@ -6,4 +6,4 @@ To make a page, you have to:
 ## Syntax
 The syntax is the same as in Markdown. 
 ## Credits
-[Site background by Owocek](https://www.deviantart.com/owocektv/art/Demon-Gate-Bababaan-Patapon-2-500846734) (https://www.deviantart.com/owocektv/art/Demon-Gate-Bababaan-Patapon-2-500846734)<br>
+[Site background by Owocek](https://www.deviantart.com/owocektv/art/Demon-Gate-Bababaan-Patapon-2-500846734)<br>
