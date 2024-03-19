@@ -1,10 +1,9 @@
-# Patapon 3 Overhaul Wiki Repository 0.1
+# Patapon 3 Overhaul Wiki 1.0
 ## Making pages
-To make a page, you have to make a new .txt file (its name will be the page name) inside Pages folder and mention it in <b>pagelist.js</b> by adding the location (local) in array. Once done, do a pull request.
+To make a page, you have to:
+- make a new .md file (its name will be the page name) inside Pages folder
+- mention its name in <b>pagelist.js</b> array
 ## Syntax
-To make titles, use ```<header>Title</header>```, for page names.<br>
-To make chapters, use ```<chapter>Chapter</chapter>```.<br>
-HTML and CSS use is allowed, but don't excessively use it.
-    
+The syntax is the same as in Markdown. 
 ## Credits
-Background by Owocek (https://www.deviantart.com/owocektv/art/Demon-Gate-Bababaan-Patapon-2-500846734)
+[Site background by Owocek](https://www.deviantart.com/owocektv/art/Demon-Gate-Bababaan-Patapon-2-500846734) (https://www.deviantart.com/owocektv/art/Demon-Gate-Bababaan-Patapon-2-500846734)<br>
