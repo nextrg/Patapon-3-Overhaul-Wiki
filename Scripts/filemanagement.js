@@ -46,14 +46,13 @@ var images = Array.prototype.map.call(document.images, img => img.src);
 images.forEach(function (image) {
     var duplicateimage = false;
     var duplicatename = false;
-    var incorrectimage = false;
     var imagepath = image.slice(image.indexOf("/Assets"), image.indexOf(".png") + 4);
-    var imagename = imagepath.replace(".png", "").replace("/Assets/", "");
+    var imagename = imagepath.replace(".png", "").replace("./Assets/", "");
 
     var div = document.createElement("div");
     div.classList = "imagegalleryelement";
     var img = document.createElement("img");
-    img.src = imagepath;
+    img.src = "." + imagepath;
     var name = document.createElement("p");
     name.textContent = imagename;
     var duplicateimagecheck = document.querySelectorAll(".imagegalleryelement img");
