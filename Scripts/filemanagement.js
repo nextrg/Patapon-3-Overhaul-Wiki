@@ -39,7 +39,7 @@ function readFileElement(file) {
 }
 
 pagelist.forEach((element) => {
-    readFileElement("/Pages/" + element + ".md");
+    readFileElement("./Pages/" + element + ".md");
 });
 
 var images = Array.prototype.map.call(document.images, img => img.src);
