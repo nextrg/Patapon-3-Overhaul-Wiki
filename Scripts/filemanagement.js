@@ -310,7 +310,7 @@ function parseJSON(content, char) {
                 maskdiv.style.scale = window.innerWidth * 0.0005;
                 maskdiv.classList = "heromaskdiv";
                 if (parsedJSON[mainclasscontainer][0].mask != "") {
-                    maskimage.src = "./Assets/masks/" + parsedJSON[mainclasscontainer][0].name.toLowerCase(); + "/" + parsedJSON[mainclasscontainer][0].mask + ".png";
+                    maskimage.src = "./Assets/masks/" + parsedJSON[mainclasscontainer][0].name.toLowerCase() + "/" + parsedJSON[mainclasscontainer][0].mask + ".png";
                 }
                 else {
                     maskimage.src = "./Assets/masks/yumiyacha/0000000098e8ef493218954c.png";
@@ -340,7 +340,7 @@ function parseJSON(content, char) {
                 maskdiv.style.scale = window.innerWidth * 0.0005;
                 maskdiv.classList = "heromaskdiv";
                 if (parsedJSON[mainclasscontainer][0].mask != "") {
-                    maskimage.src = "./Assets/masks/" + parsedJSON[mainclasscontainer][0].name.toLowerCase(); + "/" + parsedJSON[mainclasscontainer][0].mask + ".png";
+                    maskimage.src = "./Assets/masks/" + parsedJSON[mainclasscontainer][0].name.toLowerCase() + "/" + parsedJSON[mainclasscontainer][0].mask + ".png";
                 }
                 else {
                     maskimage.src = "./Assets/masks/yumiyacha/0000000098e8ef493218954c.png";
@@ -370,7 +370,7 @@ function parseJSON(content, char) {
                 maskdiv.style.scale = window.innerWidth * 0.0005;
                 maskdiv.classList = "heromaskdiv";
                 if (parsedJSON[mainclasscontainer][0].mask != "") {
-                    maskimage.src = "./Assets/masks/" + parsedJSON[mainclasscontainer][0].name.toLowerCase(); + "/" + parsedJSON[mainclasscontainer][0].mask + ".png";
+                    maskimage.src = "./Assets/masks/" + parsedJSON[mainclasscontainer][0].name.toLowerCase() + "/" + parsedJSON[mainclasscontainer][0].mask + ".png";
                 }
                 else {
                     maskimage.src = "./Assets/masks/yumiyacha/0000000098e8ef493218954c.png";
@@ -400,7 +400,7 @@ function parseJSON(content, char) {
                 maskdiv.style.scale = window.innerWidth * 0.0005;
                 maskdiv.classList = "heromaskdiv";
                 if (parsedJSON[mainclasscontainer][0].mask != "") {
-                    maskimage.src = "./Assets/masks/" + parsedJSON[mainclasscontainer][0].name.toLowerCase(); + "/" + parsedJSON[mainclasscontainer][0].mask + ".png";
+                    maskimage.src = "./Assets/masks/" + parsedJSON[mainclasscontainer][0].name.toLowerCase() + "/" + parsedJSON[mainclasscontainer][0].mask + ".png";
                 }
                 else {
                     maskimage.src = "./Assets/masks/yumiyacha/0000000098e8ef493218954c.png";
@@ -430,7 +430,7 @@ function parseJSON(content, char) {
                 maskdiv.style.scale = window.innerWidth * 0.0005;
                 maskdiv.classList = "heromaskdiv";
                 if (parsedJSON[mainclasscontainer][0].mask != "") {
-                    maskimage.src = "./Assets/masks/" + parsedJSON[mainclasscontainer][0].name.toLowerCase(); + "/" + parsedJSON[mainclasscontainer][0].mask + ".png";
+                    maskimage.src = "./Assets/masks/" + parsedJSON[mainclasscontainer][0].name.toLowerCase() + "/" + parsedJSON[mainclasscontainer][0].mask + ".png";
                 }
                 else {
                     maskimage.src = "./Assets/masks/yumiyacha/0000000098e8ef493218954c.png";
