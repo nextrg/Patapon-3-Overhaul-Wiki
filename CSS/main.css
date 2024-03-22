@@ -67,6 +67,26 @@
     overflow-x: hidden;
 }
 
+.singlepage:not(#Home) p {
+    font-size: 2vh;
+}
+
+.singlepage:not(#Home) h1 {
+    font-size: 3.5vh;
+}
+
+.singlepage:not(#Home) h2 {
+    font-size: 2.7vh;
+}
+
+.singlepage:not(#Home) h3 {
+    font-size: 2.4vh;
+}
+
+.singlepage:not(#Home) li {
+    font-size: 2vh;
+}
+
 .additionalinformation {
     flex: 1.5;
     display: flex;
@@ -141,8 +161,8 @@
     border-radius: 10px;
 }
 
-ul,
-ul li {
+#Home ul,
+#Home ul li {
     padding: 0;
     width: fit-content;
     display: flex;
@@ -152,7 +172,7 @@ ul li {
     cursor: pointer;
 }
 
-ul li {
+#Home ul li {
     padding: 4px 6px;
     border-radius: 8px;
 }
@@ -165,6 +185,7 @@ ul li {
 
 .categorycontainer {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .categorycontainer .category {
@@ -201,11 +222,13 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p {
     margin: 0;
 }
 
 h2 {
+    margin: 4px 0;
     border-bottom: 1px solid black;
 }
 

@@ -234,11 +234,11 @@ select {
 }
 
 .classdescription {
-    font-size: 16px;
+    font-size: 2vh;
     padding-top: 5px;
 }
 
 .skilldescription {
-    font-size: 16px;
+    font-size: 2vh;
     padding-top: 5px;
 }

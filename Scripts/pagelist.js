@@ -10,5 +10,5 @@ const pagelist = [
     "Armor",
     "Bosses",
     "Item_Sets",
-    "Rarities"
+    "Equipment_Rarities"
 ]
