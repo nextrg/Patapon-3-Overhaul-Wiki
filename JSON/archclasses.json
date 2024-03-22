@@ -2,7 +2,10 @@
     "1": [
         {
             "name": "Oohoroc",
-            "mask": "00000000c695e1a0ff63468a"
+            "mask": "00000000c695e1a0ff63468a",
+            "description": "This black mage is an expert of attack magic. Strength of spells improves with use",
+            "skillname": "Armageddon",
+            "skilldescription": "Activate: ○○□○<br>Combo: ○○□○<br>Countless shooting stars coalesce and form magic fireballs which rain down upon the entire earth."
         }
     ],
     "2": [
@@ -18,7 +21,9 @@
         {
             "name": "Cannogabang",
             "mask": "000000001cd1315793fc7703",
-            "description": "This devastating ranged cannon unit supports troops from the rear. Weak at close-range."
+            "description": "This devastating ranged cannon unit supports troops from the rear. Weak at close-range.",
+            "skillname": "Slinger",
+            "skilldescription": "Activate: ○○△△ 〜 ○○□○<br>Execute powerful cannon attack.<br>Cannon: glowing shells.<br>Blunderbuss: piercing fire spray.<br>Laser: ultra-ginormous laser."
         }
     ],
     "4": [
@@ -33,7 +38,10 @@
     "5": [
         {
             "name": "Alosson",
-            "mask": "000000001a01ef80db8227e5"
+            "mask": "000000001a01ef80db8227e5",
+            "description": "This long-range archer fires volleys of arrows. Learns to use longbows with experience.",
+            "skillname": "Arrow Shower",
+            "skilldescription":"Activate: ○○□○<br>Combo: ○○□○<br>Rapidly fire glowing arrows! Power of glow enhances with high volume. Powerful weapon with fired rapidly."
         }
     ],
     "6": [
@@ -48,7 +56,10 @@
     "7": [
         {
             "name": "Jamsch",
-            "mask": "00000000d1894a65d122ddaa"
+            "mask": "00000000d1894a65d122ddaa",
+            "description": "This dark minstrel has weak offence, but its sonic balls cause various status effects.",
+            "skillname": "Airborne Threat",
+            "skilldescription":"Activate: ○○□○<br>Combo: ○○□○<br>Fire poisonous spores into the sky to inflict poison damage on all foes. Destination determined by wind."
         }
     ]
 }

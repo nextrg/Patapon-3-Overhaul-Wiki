@@ -26,9 +26,6 @@ function readFileElement(file) {
                     if (pageName.indexOf("dark") > -1) {
                         parseJSON(allText, "dark");
                     }
-                    if (pageName.indexOf("ptpn") > -1) {
-                        parseJSON(allText, "ptpn");
-                    }
                 }
                 else {
                     var article = document.createElement("div");
@@ -105,21 +102,17 @@ function pickableClass(e) {
     var pickedoption = e + 1;
     if (pickedoption == 1) {
         $('.singleclasscontainer').css("display", "none");
-        $('.shldcontainer').css("display", "block");
+        $('.archcontainer').css("display", "block");
     }
     if (pickedoption == 2) {
         $('.singleclasscontainer').css("display", "none");
-        $('.spearcontainer').css("display", "block");
+        $('.shldcontainer').css("display", "block");
     }
     if (pickedoption == 3) {
         $('.singleclasscontainer').css("display", "none");
-        $('.archcontainer').css("display", "block");
+        $('.spearcontainer').css("display", "block");
     }
     if (pickedoption == 4) {
-        $('.singleclasscontainer').css("display", "none");
-        $('.ptpncontainer').css("display", "block");
-    }
-    if (pickedoption == 5) {
         $('.singleclasscontainer').css("display", "none");
         $('.darkcontainer').css("display", "block");
     }
@@ -186,25 +179,6 @@ classselectelement.forEach(function (e) {
         div1.append(div);
         e.append(div1);
     }
-    for (let i = 0; i < classamount * 3; i++) {
-        var div = document.createElement("div");
-        var div1 = document.createElement("div");
-        if (i <= 5 || i >= 15) {
-            div.style.opacity = 0;
-        }
-        if (i != 10) {
-            div.classList = "singleclass class" + (i + 1) + " classunselected";
-        }
-        else {
-            div.classList = "singleclass class" + (i + 1) + " mainclass";
-        }
-        div1.classList = "ptpncontainer singleclasscontainer class" + (i + 1) + "container";
-        var classname = document.createElement("span");
-        classname.innerHTML = "CLASSNAME";
-        div.append(classname);
-        div1.append(div);
-        e.append(div1);
-    }
     for (let i = 0; i < classamount; i++) {
         var div = document.createElement("div");
         var div1 = document.createElement("div");
@@ -233,7 +207,7 @@ classselectelement.forEach(function (e) {
     var controls1 = document.createElement('div');
     var controls1div = document.createElement("span");
     controls1.classList = "classlistcontrols firstclasslist";
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 4; i++) {
         var pickableclass = document.createElement('div');
         pickableclass.classList = "pickableclass pickableclass" + (i + 1);
         pickableclass.onclick = function () { pickableClass(i) }
@@ -280,16 +254,11 @@ var darknameArrays = [];
 var darkdescArrays = [];
 var darkskillArrays = [];
 var darkskilldescArrays = [];
-var ptpnnameArrays = [];
-var ptpndescArrays = [];
-var ptpnskillArrays = [];
-var ptpnskilldescArrays = [];
 
 readFileElement("./JSON/archclasses.json");
 readFileElement("./JSON/spearclasses.json");
 readFileElement("./JSON/shldclasses.json");
 readFileElement("./JSON/darkclasses.json");
-readFileElement("./JSON/ptpnclasses.json");
 
 function parseJSON(content, char) {
     var parsedJSON = JSON.parse(content);
@@ -383,36 +352,6 @@ function parseJSON(content, char) {
             }
         });
     }
-    if (char == "ptpn") {
-        $(".ptpncontainer").ready(function () {
-            for (mainclasscontainer = 1; mainclasscontainer < 22; mainclasscontainer++) {
-                ptpnnameArrays.push((parsedJSON[mainclasscontainer])[0].name);
-                ptpndescArrays.push((parsedJSON[mainclasscontainer])[0].description);
-                ptpnskillArrays.push((parsedJSON[mainclasscontainer])[0].skillname);
-                ptpnskilldescArrays.push((parsedJSON[mainclasscontainer])[0].skilldescription);
-
-                var jsoncontent = ((parsedJSON[mainclasscontainer])[0].name);
-                var maskdiv = document.createElement("div");
-                var maskanotherdiv = document.createElement('div');
-                var maskimage = document.createElement("img");
-                maskimage.width = "100";
-
-                maskdiv.style.scale = window.innerWidth * 0.0005;
-                maskdiv.classList = "heromaskdiv";
-                if (parsedJSON[mainclasscontainer][0].mask != "") {
-                    maskimage.src = "./Assets/masks/" + parsedJSON[mainclasscontainer][0].name.toLowerCase() + "/" + parsedJSON[mainclasscontainer][0].mask + ".png";
-                }
-                else {
-                    maskimage.src = "./Assets/masks/yumiyacha/0000000098e8ef493218954c.png";
-                }
-                maskimage.classList = "heromask";
-                $('.ptpncontainer .singleclass span')[mainclasscontainer - 1].textContent = jsoncontent;
-                maskanotherdiv.append(maskimage);
-                maskdiv.append(maskanotherdiv);
-                $('.ptpncontainer .singleclass')[mainclasscontainer - 1].append(maskdiv);
-            }
-        });
-    }
     if (char == "dark") {
         $(".darkcontainer").ready(function () {
             for (mainclasscontainer = 1; mainclasscontainer < 8; mainclasscontainer++) {
@@ -463,9 +402,6 @@ function classmove(direction) {
     }
     if (direction == "reset") {
         controlposition = 3;
-        if ($($('.classselect .singleclasscontainer:visible')[controlposition]).hasClass("ptpncontainer")) {
-            controlposition = 10;
-        }
         $('.classselect').css("transform", "matrix(1, 0, 0, 1, " + primarydistance * 3 + ", 0)");
     }
     var chosenclass = ($($('.classselect .singleclasscontainer:visible')[controlposition]));
@@ -500,12 +436,6 @@ function classmove(direction) {
         $('.classdescription').text((darkdescArrays)[controlposition]);
         $('.skilltitle').text((darkskillArrays)[controlposition]);
         $('.skilldescription').html((darkskilldescArrays)[controlposition]);
-    }
-    if ($(chosenclass).hasClass("ptpncontainer")) {
-        $('.classtitle').text((ptpnnameArrays)[controlposition]);
-        $('.classdescription').text((ptpndescArrays)[controlposition]);
-        $('.skilltitle').text((ptpnskillArrays)[controlposition]);
-        $('.skilldescription').html((ptpnskilldescArrays)[controlposition]);
     }
 }
 
