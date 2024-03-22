@@ -313,7 +313,7 @@ function parseJSON(content, char) {
                     maskimage.src = "./Assets/masks/" + parsedJSON[mainclasscontainer][0].name.toLowerCase(); + "/" + parsedJSON[mainclasscontainer][0].mask + ".png";
                 }
                 else {
-                    maskimage.src = "./Assets/masks/Yumiyacha/0000000098e8ef493218954c.png";
+                    maskimage.src = "./Assets/masks/yumiyacha/0000000098e8ef493218954c.png";
                 }
                 maskimage.classList = "heromask";
                 $('.archcontainer .singleclass span')[mainclasscontainer - 1].textContent = jsoncontent;
@@ -343,7 +343,7 @@ function parseJSON(content, char) {
                     maskimage.src = "./Assets/masks/" + parsedJSON[mainclasscontainer][0].name.toLowerCase(); + "/" + parsedJSON[mainclasscontainer][0].mask + ".png";
                 }
                 else {
-                    maskimage.src = "./Assets/masks/Yumiyacha/0000000098e8ef493218954c.png";
+                    maskimage.src = "./Assets/masks/yumiyacha/0000000098e8ef493218954c.png";
                 }
                 maskimage.classList = "heromask";
                 $('.shldcontainer .singleclass span')[mainclasscontainer - 1].textContent = jsoncontent;
@@ -373,7 +373,7 @@ function parseJSON(content, char) {
                     maskimage.src = "./Assets/masks/" + parsedJSON[mainclasscontainer][0].name.toLowerCase(); + "/" + parsedJSON[mainclasscontainer][0].mask + ".png";
                 }
                 else {
-                    maskimage.src = "./Assets/masks/Yumiyacha/0000000098e8ef493218954c.png";
+                    maskimage.src = "./Assets/masks/yumiyacha/0000000098e8ef493218954c.png";
                 }
                 maskimage.classList = "heromask";
                 $('.spearcontainer .singleclass span')[mainclasscontainer - 1].textContent = jsoncontent;
@@ -403,7 +403,7 @@ function parseJSON(content, char) {
                     maskimage.src = "./Assets/masks/" + parsedJSON[mainclasscontainer][0].name.toLowerCase(); + "/" + parsedJSON[mainclasscontainer][0].mask + ".png";
                 }
                 else {
-                    maskimage.src = "./Assets/masks/Yumiyacha/0000000098e8ef493218954c.png";
+                    maskimage.src = "./Assets/masks/yumiyacha/0000000098e8ef493218954c.png";
                 }
                 maskimage.classList = "heromask";
                 $('.ptpncontainer .singleclass span')[mainclasscontainer - 1].textContent = jsoncontent;
