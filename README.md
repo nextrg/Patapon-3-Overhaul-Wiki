@@ -1,4 +1,4 @@
-# Patapon 3 Overhaul Wiki 1.0
+# Patapon 3 Overhaul Wiki
 ## Making pages
 To make a page, you have to:
 - [make a new .md file in Pages folder](https://github.com/nextrg/Patapon-3-Overhaul-Wiki/new/main/Pages) (it's name will be the page name)
@@ -7,3 +7,5 @@ To make a page, you have to:
 The syntax is the same as in Markdown. 
 ## Credits
 [Site background by Owocek](https://www.deviantart.com/owocektv/art/Demon-Gate-Bababaan-Patapon-2-500846734)<br>
+[Patapon 3 HD Texturepack](https://github.com/Lin-zl522/Patapon-3-HD-Texture-Pack)<br>
+[Patapon 3 Overhaul HD Texturepack](https://github.com/KnotSora/Patapon-3-Overhaul-HD-Textures)

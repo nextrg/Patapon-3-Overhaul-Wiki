@@ -24,6 +24,7 @@ function openPage(element) {
             $('.scrollbar').css("opacity", "0%");
         }
     }
+    classmove('reset');
 }
 
 function goHome() {
@@ -40,4 +41,5 @@ function goHome() {
         }
     }
 }
+
 goHome();

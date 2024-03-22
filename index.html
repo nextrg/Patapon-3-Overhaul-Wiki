@@ -4,29 +4,27 @@
 <head>
     <meta charset="utf-8">
     <title>Home</title>
-    <link rel="icon" type="image/png" href="./Assets/0000000009aaf4c7850a21fa.png">
+    <link rel="icon" type="x/icon" href="./Assets/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Patapon 3 Overhaul Wiki" />
     <meta property="og:image" content="./Assets/0000000009aaf4c7850a21fa.png">
-    <meta name="description"
-        content="The wiki about Patapon 3 Overhaul, that contains updated information." />
+    <meta name="description" content="The wiki about Patapon 3 Overhaul, that contains updated information." />
 </head>
 <style>
-    @font-face {
-        font-family: sunday;
-        src: url(./Assets/vtcsundaykomix.ttf);
-    }
+    @import url(./CSS/main.css);
+    @import url(./CSS/custom.css);
+    @import url(./CSS/styles.css);
 
-    body {
-        margin: 0;
-        padding: 0;
-        background: url(./Assets/background.png) no-repeat;
-        background-size: cover;
-        overflow: hidden;
-        font-family: sunday, sans-serif;
+    @font-face {
+        font-family: dfpop;
+        src: url(./Assets/DFKakuPopStd-W5.ttf);
     }
 
     @media (max-width: 900px) {
+        .singleclass span {
+            transform: translateY(-25px) !important;
+        }
+
         .homebody {
             flex-direction: column;
             align-items: stretch !important;
@@ -67,410 +65,46 @@
         }
     }
 
-    ::-webkit-scrollbar {
-        width: 12px;
-    }
-
-    ::-webkit-scrollbar-track {
-        background: #000000;
-        border-radius: 100px;
-    }
-
-    ::-webkit-scrollbar-thumb {
-        background: #ffffff;
-        border-radius: 100px;
-        border: 2px solid rgb(0, 0, 0);
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-        background: #e2e2e2;
-    }
-
-    .maincontainer {
-        display: flex;
-        height: 100vh;
-        width: 100vw;
-    }
-
-    .pagelist p {
+    body {
         margin: 0;
-    }
-
-    .pages {
-        margin: 15px;
-        margin-left: 0;
-        flex: 8;
-        backdrop-filter: blur(0px);
-        background: rgba(255, 237, 210, 1);
-        border-radius: 16px;
-        display: flex;
-        flex-direction: row-reverse;
-    }
-
-    .style1 {
-        backdrop-filter: blur(25px) opacity(85%);
-        background: rgba(255, 237, 210, 0.3);
-        background-image: url(data:image/png;base64,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);
-    }
-
-    .singlepage {
-        animation: 0.5s fadeanimation forwards;
-        margin: 15px;
-        overflow-y: auto;
-        height: calc(100vh - 60px);
-        flex: 1;
-        overflow-x: hidden;
-    }
-
-    img {
-        width: 100px;
-    }
-
-    .homebody {
-        display: flex;
-        align-items: stretch;
-    }
-
-    .mainarticles h2,
-    .articlelist h2,
-    .helpnotification h2 {
-        margin-bottom: 4px;
-    }
-
-    .mainarticles,
-    .articlelist,
-    .helpnotification {
-        border: 1px solid rgba(0, 0, 0, 0.15);
-        margin: 5px 7px;
-        flex: 5;
-        background: rgba(0, 0, 0, 0.05);
-        padding: 8px 10px;
-        border-radius: 10px;
-    }
-
-    .articles {
-        overflow: hidden;
-        overflow-y: auto;
-        max-height: 175px;
-    }
-
-    .articlelist p {
-        cursor: pointer;
-        margin: 0;
-    }
-
-    .helpnotification p {
-        margin: 0;
-        cursor: pointer;
-        width: fit-content;
-        margin-top: 8px;
-    }
-
-    .helpnotification p a {
-        text-decoration: none;
-    }
-
-    .categorycontainer {
-        display: flex;
-    }
-
-    .categorycontainer .category {
-        flex: 1;
-    }
-
-    .link {
-        background: #FBF6EE;
-        color: #0E479A;
-        padding: 4px 6px;
-        -moz-border-bottom-left-radius: 8px;
-        -webkit-border-bottom-left-radius: 8px;
-        border-bottom-left-radius: 8px;
-        -moz-border-bottom-right-radius: 8px;
-        -webkit-border-bottom-right-radius: 8px;
-        border-bottom-right-radius: 8px;
-        -moz-border-top-right-radius: 8px;
-        -webkit-border-top-right-radius: 8px;
-        border-top-right-radius: 8px;
-        -moz-border-top-left-radius: 8px;
-        -webkit-border-top-left-radius: 8px;
-        border-top-left-radius: 8px;
-        -webkit-box-decoration-break: clone;
-        -o-box-decoration-break: clone;
-        box-decoration-break: clone;
-    }
-
-    .articlelist .link {
-        width: fit-content;
-        margin-top: 4px;
-    }
-
-    ul,
-    ul li {
         padding: 0;
-        width: fit-content;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 4px;
-        cursor: pointer;
+        background: url(./Assets/background.png) no-repeat;
+        background-size: cover;
+        overflow: hidden;
+        font-family: dfpop, sans-serif;
+        letter-spacing: -0.5px;
     }
 
-    ul li {
-        padding: 4px 6px;
-        border-radius: 8px;
+    .pickableclass {
+        padding: 5px !important;
+        background: url('./Assets/icons/classicons.png');
+        background-size: 450%;
     }
 
-    .additionalinformation {
-        flex: 1.5;
-        display: flex;
-        flex-direction: column;
+    .pickableclass:hover {
+        filter: invert(100%) grayscale(100%);
     }
 
-    .imagegallery,
-    .searchmenu,
-    .settings {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: #FFEDD2;
-        padding: 15px;
-        border-radius: 10px;
-        width: fit-content;
-        border: 1px solid #5c554c;
-        flex-direction: column;
+    .pickableclass {
+        background-position: 0px 0px;
     }
 
-    .titlesettingscontainer {
-        justify-content: space-between;
-        display: flex;
+    .pickableclass2 {
+        background-position: -34px 0;
     }
 
-    .settings h2 i,
-    .imagegallery h2 i {
-        margin-right: 4px;
+    .pickableclass3 {
+        background-position: -65px 0;
     }
 
-    .settings h2,
-    .imagegallery h2 {
-        display: flex;
-        align-items: center;
+    .pickableclass4 {
+        background: url("./Assets/icons/pataponicons.png");
+        background-position: -42px -116px;
+        background-size: 600%;
     }
 
-    .imagegallerybackground {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 100vw;
-        height: 100vh;
-        background: rgba(0, 0, 0, 0.35);
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        margin: 0;
-    }
-
-    .closeGalleryButton {
-        display: flex;
-        background-color: #D9CAB3;
-        border-radius: 10px;
-        margin-left: 10px;
-        cursor: pointer;
-        font-size: 22px;
-        width: 29px;
-        height: 29px;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .closeSearchMenuButton {
-        display: flex;
-        background-color: #D9CAB3;
-        border-radius: 10px;
-        margin-left: 10px;
-        cursor: pointer;
-        font-size: 22px;
-        width: 29px;
-        padding: 0 !important;
-        height: 29px;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .titlegallerycontainer {
-        margin-bottom: 15px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .imagegallerycontainer {
-        display: flex;
-        min-height: 84px;
-        overflow-y: auto;
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
-    .imagegalleryelement {
-        background: rgba(0, 0, 0, 0.05);
-        padding: 4px 6px;
-        border-radius: 10px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .imagegalleryelement img {
-        min-width: 190px;
-        height: auto;
-        background: rgba(0, 0, 0, 0.15);
-        padding: 4px;
-        border-radius: 8px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 1px;
-    }
-
-    .imagegalleryelement p {
-        background: rgba(0, 0, 0, 0.15);
-        margin: 2px 0;
-        padding: 4px 6px;
-        border-radius: 8px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .pagelist {
-        margin: 10px;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .pagelist div {
-        margin: 1px;
-        width: fit-content;
-        cursor: pointer;
-        justify-content: center;
-        padding: 8px 8px;
-        display: flex;
-        background: #FFFB9B;
-        border: 2px solid #FF9C00;
-        box-shadow: 2px 0px 0 black, -2px 0px 0 black, 2px 2px 0 black, -2px 2px 0 black;
-    }
-
-    .pagelist div i {
-        font-size: 22px;
-        min-width: 25px;
-        min-height: 25px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .pagelist div:first-child {
-        box-shadow: 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black, -2px -2px 0 black;
-    }
-
-    .pagecount {
-        font-size: 19px;
-        margin: 0;
-    }
-
-    .searchsuggestions {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .suggestion {
-        cursor: pointer;
-    }
-
-    .searchinputbox {
-        background: none;
-        padding: 8px 10px;
-        border: none;
-        outline: none;
-        margin: -2px;
-    }
-
-    .searchinput {
-        display: flex;
-        align-items: center;
-    }
-
-    .inputcontainer {
-        display: flex;
-        align-items: center;
-        border: 4px solid #D9CAB3;
-        background: #D9CAB3;
-        border-radius: 8px;
-    }
-
-    .clearSearchButton {
-        padding: 4px 6px;
-        font-size: 20px;
-        display: flex;
-    }
-
-    h2 {
-        border-bottom: 1px solid black;
-    }
-
-    .custom-select {
-        margin-top: 4px;
-        position: relative;
-        min-width: 150px;
-    }
-
-    .suggestion {
-        margin-top: 4px;
-        background: rgba(0, 0, 0, 0.07);
-        width: fit-content;
-    }
-
-    select {
-        appearance: none;
-        -webkit-appearance: none;
-        width: 100%;
-        font-size: 1.15rem;
-        padding: 0.275em 0.45em 0.275em 0.45em;
-        background-color: #fff;
-        border: 1px solid #caced1;
-        border-radius: 0.25rem;
-        color: #000;
-        cursor: pointer;
-    }
-
-    .custom-select::before,
-    .custom-select::after {
-        --size: 0.3rem;
-        position: absolute;
-        content: "";
-        right: 1rem;
-        pointer-events: none;
-    }
-
-    .custom-select::before {
-        border-left: var(--size) solid transparent;
-        border-right: var(--size) solid transparent;
-        border-bottom: var(--size) solid black;
-        top: 40%;
-    }
-
-    .custom-select::after {
-        border-left: var(--size) solid transparent;
-        border-right: var(--size) solid transparent;
-        border-top: var(--size) solid black;
-        top: 55%;
+    .pickableclass5 {
+        background-position: -66px -34px;
     }
 </style>
 
@@ -494,7 +128,7 @@
             <div class="singlepage" id="Home" style="display: block;">
                 <center>
                     <h1>Welcome to Patapon 3 Overhaul Wiki!</h1>
-                    <img alt="A patapon unit" src="./Assets/0000000009aaf4c7850a21fa.png" />
+                    <img width="100" alt="A patapon unit" src="./Assets/other/0000000009aaf4c7850a21fa.png" />
                     <p style="margin-bottom: 0;">Here you can find updated information about the overhaul mod for
                         Patapon 3.</p>
                     <p class="wipdisclaimer" style="margin-top: 0; margin-bottom: 0;">Work in progress - it can lack
@@ -522,12 +156,8 @@
                                 <div class="category">
                                     <h3>Classes & Skills</h3>
                                     <ul>
-                                        <li class="link" onclick="openPage(`Uberhero_Classes`)">Uberhero Classes</li>
-                                        <li class="link" onclick="openPage(`Uberhero_Skills`)">Uberhero Skills</li>
-                                        <li class="link" onclick="openPage(`Darkhero_Classes`)">Darkhero Classes</li>
-                                        <li class="link" onclick="openPage(`Darkhero_Skills`)">Darkhero Skills</li>
-                                        <li class="link" onclick="openPage(`Patapon_Classes`)">Patapon Classes</li>
-                                        <li class="link" onclick="openPage(`Patapon_Skills`)">Patapon Skills</li>
+                                        <li class="link" onclick="openPage(`Classes`)">Classes</li>
+                                        <li class="link" onclick="openPage(`Skills`)">Skills</li>
                                         <li class="link" onclick="openPage(`Spirits`)">Spirits</li>
                                     </ul>
                                 </div>
@@ -536,6 +166,7 @@
                                     <ul>
                                         <li class="link" onclick="openPage(`Item_Sets`)">Item Sets</li>
                                         <li class="link" onclick="openPage(`Rarities`)">Rarities</li>
+                                        <li class="link" onclick="openPage(`Enchants`)">Enchants</li>
                                     </ul>
                                 </div>
                             </div>
@@ -592,7 +223,7 @@
                 </div>
                 <div class="custom-select">
                     <select name="styles" id="styles">
-                        <option value="basic">Basic</option>
+                        <option value="basic">Classic</option>
                         <option value="acrylic">Acrylic</option>
                     </select>
                 </div>
@@ -600,16 +231,13 @@
         </div>
     </div>
 </body>
-
 <script src="Libraries/jquery-3.7.1.slim.min.js"></script>
 <script src="Libraries/fuse.js@7.0.0"></script>
 <script src="https://kit.fontawesome.com/94f856f993.js" crossorigin="anonymous"></script>
 <script src="Libraries/showdown.min.js"></script>
-
 <script src="Scripts/pagelist.js"></script>
 <script src="Scripts/menus.js"></script>
 <script src="Scripts/filemanagement.js"></script>
 <script src="Scripts/pagemanagement.js"></script>
-
 
 </html>

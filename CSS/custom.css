@@ -1,0 +1,244 @@
+/* CSS file for custom elements */
+
+/* ----------------- Custom Select Menu ----------------- */
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+    font-size: 1.15rem;
+    padding: 0.275em 0.45em 0.275em 0.45em;
+    background-color: #fff;
+    border: 1px solid #caced1;
+    border-radius: 0.25rem;
+    color: #000;
+    cursor: pointer;
+}
+
+.custom-select {
+    margin-top: 4px;
+    position: relative;
+    min-width: 150px;
+}
+
+.custom-select::before,
+.custom-select::after {
+    --size: 0.3rem;
+    position: absolute;
+    content: "";
+    right: 1rem;
+    pointer-events: none;
+}
+
+.custom-select::before {
+    border-left: var(--size) solid transparent;
+    border-right: var(--size) solid transparent;
+    border-bottom: var(--size) solid black;
+    top: 40%;
+}
+
+.custom-select::after {
+    border-left: var(--size) solid transparent;
+    border-right: var(--size) solid transparent;
+    border-top: var(--size) solid black;
+    top: 55%;
+}
+
+/* ----------------- Search Menu elements ----------------- */
+
+.searchsuggestions {
+    display: flex;
+    flex-direction: column;
+}
+
+.suggestion {
+    cursor: pointer;
+    margin-top: 4px;
+    width: fit-content;
+}
+
+.suggestion p {
+    margin: 0;
+}
+
+.searchinputbox {
+    background: none;
+    padding: 8px 10px;
+    border: none;
+    outline: none;
+    margin: -2px;
+}
+
+.searchinput {
+    display: flex;
+    align-items: center;
+}
+
+.inputcontainer {
+    display: flex;
+    align-items: center;
+    border: 4px solid #D9CAB3;
+    background: #D9CAB3;
+    border-radius: 8px;
+}
+
+.clearSearchButton {
+    cursor: pointer;
+    padding: 4px 6px;
+    font-size: 20px;
+    display: flex;
+}
+
+/* ----------------- Select Class Menu elements ----------------- */
+
+.classselect {
+    margin-top: 3vw;
+    display: flex;
+    justify-content: center;
+    transition: 0.25s linear;
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    height: 13vw;
+}
+
+.singleclass {
+    transition: 0.25s;
+    width: calc((82vw / 7) - 15px);
+    height: calc((82vw / 7) - 15px);
+    border-radius: 100% !important;
+    outline: 1vw solid #FFF78C;
+    border: 2.3vw solid #F7CB31;
+    box-sizing: border-box;
+    background: #FFE384;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    flex-direction: column-reverse;
+}
+
+.classunselected {
+    outline: none;
+    box-shadow: 0 0 0 0.5vw rgba(0, 0, 0, 0.25);
+    border: 2.3vw solid #7BA600;
+    background: #9CD721;
+    filter: none;
+}
+
+.singleclass span {
+    clip-path: inset(4px 4px 4px 4px);
+    border: 3px solid rgb(239, 65, 8);
+    background-color: #210601;
+    color: white;
+    z-index: 1;
+    transform: translateY(-5px);
+    font-size: 2vw;
+    padding: 4px 6px;
+    transition: 0.25s;
+    box-sizing: border-box;
+}
+
+.singleclasscontainer {
+    margin-right: 2vw;
+    margin-left: 2vw;
+}
+
+.classlistcontrols {
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.classlistcontrols div {
+    cursor: pointer;
+    user-select: none;
+    margin: 10px;
+    padding: 3px;
+    background-color: white;
+    border: 4px solid black;
+    color: black;
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.25s;
+}
+
+.classlistcontrols span {
+    border: 2px solid rgba(0, 0, 0, 0.15);
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    display: flex;
+}
+
+.firstclasslist span {
+    transform: translateY(-8px);
+}
+
+.lastclasslist div:hover {
+    background-color: black;
+    color: white;
+}
+
+.classlistcontrols div i {
+    transition: 0.25s;
+}
+
+.classlistcontrolreset:hover i {
+    transform: scale(1.4) rotate(90deg);
+}
+
+.classlistcontrolleft:hover i {
+    transform: scale(1.4) rotate(45deg);
+}
+
+.classlistcontrolright:hover i {
+    transform: scale(1.4) rotate(-45deg);
+}
+
+.heromask {
+    scale: 1.6;
+    transform: translateY(-0.8vw);
+}
+
+.heromaskdiv {
+    clip-path: none !important;
+}
+
+.classcontainer, .skillcontainer {
+    transition: 0.5s;
+    margin: 5px;
+    border-radius: 10px;
+    padding: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.15);
+    background: rgba(0, 0, 0, 0.05);
+    flex: 3;
+}
+
+.skillcontainer {
+    flex: 5;
+}
+
+.classtitle {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    border-bottom: 1px solid black;
+    padding-bottom: 5px;
+}
+
+.skilltitle {
+    color: red;
+    font-size: 28px;
+    border-bottom: 1px solid black;
+}
+
+.classdescription {
+    font-size: 16px;
+    padding-top: 5px;
+}
+
+.skilldescription {
+    font-size: 16px;
+    padding-top: 5px;
+}
