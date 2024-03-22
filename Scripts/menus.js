@@ -28,14 +28,19 @@ if (localStorage.style == undefined) {
 }
 if (localStorage.style == "basic") {
     $('#styles').val("basic");
-    basicTheme();
+    clearTheme();
 }
 if (localStorage.style == "acrylic") {
     $('#styles').val("acrylic");
     acrylicTheme();
 }
+if (localStorage.style == "darkhero") {
+    $('#styles').val("darkhero");
+    darkheroTheme();
+}
 
 function acrylicTheme() {
+    clearTheme();
     $(document).ready(function () {
         $('.pages').addClass("acrylic-main");
         $('.mainarticles').addClass("acrylic-container");
@@ -47,16 +52,31 @@ function acrylicTheme() {
         $('table').addClass("acrylic-container");
     });
 }
-function basicTheme() {
+
+function darkheroTheme() {
+    clearTheme();
+    $(document).ready(function() {
+        $('.pages').addClass("darkhero-main");
+        $('.mainarticles').addClass("darkhero-container");
+        $('.helpnotification').addClass("darkhero-container");
+        $('.articlelist').addClass("darkhero-container");
+        $('.classcontainer').addClass("darkhero-container");
+        $('.skillcontainer').addClass("darkhero-container");
+        $('.classlistcontrols span').addClass("darkhero-container");
+        $('table').addClass("darkhero-container");
+    });
+}
+
+function clearTheme() {
     $(document).ready(function () {
-        $('.pages').removeClass("acrylic-main");
-        $('.mainarticles').removeClass("acrylic-container");
-        $('.helpnotification').removeClass("acrylic-container");
-        $('.articlelist').removeClass("acrylic-container");
-        $('.classcontainer').removeClass("acrylic-container");
-        $('.skillcontainer').removeClass("acrylic-container");
-        $('.classlistcontrols span').removeClass("acrylic-container");
-        $('table').removeClass("acrylic-container");
+        $('.pages').removeClass("acrylic-main").removeClass("darkhero-main");
+        $('.mainarticles').removeClass("acrylic-container").removeClass("darkhero-container");
+        $('.helpnotification').removeClass("acrylic-container").removeClass("darkhero-container");
+        $('.articlelist').removeClass("acrylic-container").removeClass("darkhero-container");
+        $('.classcontainer').removeClass("acrylic-container").removeClass("darkhero-container");
+        $('.skillcontainer').removeClass("acrylic-container").removeClass("darkhero-container");
+        $('.classlistcontrols span').removeClass("acrylic-container").removeClass("darkhero-container");
+        $('table').removeClass("acrylic-container").removeClass("darkhero-container");
     });
 }
 
@@ -67,7 +87,11 @@ $("#styles").change(function () {
         localStorage.setItem("style", "acrylic");
     }
     if (style == "basic") {
-        basicTheme();
+        clearTheme();
         localStorage.setItem("style", "basic");
+    }
+    if (style == "darkhero") {
+        darkheroTheme();
+        localStorage.setItem("style", "darkhero");
     }
 });

@@ -24,10 +24,23 @@
 .acrylic-main {
     backdrop-filter: blur(30px);
     background: rgba(128, 128, 128, 0.12);
-    border: 2px solid rgba(255,255,255,0.18);
+    border: 2px solid rgba(255, 255, 255, 0.18);
 }
 
 .acrylic-container {
     background: rgba(196, 196, 196, 0.16) !important;
-    border: 2px solid rgba(255,255,255,0.3) !important;
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+/* ----------------- Darkhero Theme ----------------- */
+.darkhero-main {
+    background: rgb(163, 94, 167);
+    border-radius: 4px;
+    border: 2px solid rgba(17, 11, 17, 0.18);
+}
+
+.darkhero-container {
+    background: rgb(161, 84, 163);
+    border-radius: 4px;
+    border: 2px solid rgba(252, 167, 255, 0.3) !important;
 }
