@@ -1,6 +1,11 @@
 // See https://kit.svelte.dev/docs/types#app
 // for information about these interfaces
 declare global {
+	type PageMeta = {
+		title: string
+		category: string
+		ord: number
+	}
 	namespace App {
 		// interface Error {}
 		// interface Locals {}
@@ -10,4 +15,4 @@ declare global {
 	}
 }
 
-export {};
+export {}
