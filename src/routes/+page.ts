@@ -1,6 +1,6 @@
 export async function load({ fetch }) {
-	const response = await fetch('/api/posts')
-	const posts = (await response.json()) as {
+	const response = await fetch('/api/pages')
+	const pages = (await response.json()) as {
 		metadata: PageMeta
 		path: string
 	}[]
@@ -13,7 +13,7 @@ export async function load({ fetch }) {
 		}[]
 	>()
 
-	posts.forEach((element) => {
+	pages.forEach((element) => {
 		const category = element.metadata.category
 		if (!categories.get(category)) {
 			categories.set(category, [])
@@ -22,7 +22,7 @@ export async function load({ fetch }) {
 	})
 
 	return {
-		pages: posts,
+		pages: pages,
 		categories
 	}
 }

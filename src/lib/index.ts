@@ -1,10 +1,10 @@
 // place files you want to import through the `$lib` alias in this folder.
-export const fetchMarkdownPosts = async () => {
-	const allPostFiles = import.meta.glob('/src/routes/pages/*.md')
-	const iterablePostFiles = Object.entries(allPostFiles)
+export const fetchMarkdownPages = async () => {
+	const allPagesFiles = import.meta.glob('/src/routes/pages/*.md')
+	const iterablePagesFiles = Object.entries(allPagesFiles)
 
-	const allPosts = await Promise.all(
-		iterablePostFiles.map(async ([path, resolver]) => {
+	const allPages = await Promise.all(
+		iterablePagesFiles.map(async ([path, resolver]) => {
 			const page = (await resolver()) as { metadata: PageMeta }
 			const postPath = path.slice(11, -3)
 
@@ -15,9 +15,9 @@ export const fetchMarkdownPosts = async () => {
 		})
 	)
 
-	const sortedPosts = allPosts.sort((a, b) => {
+	const sortedPages = allPages.sort((a, b) => {
 		return a.metadata.ord - b.metadata.ord
 	})
 
-	return sortedPosts
+	return sortedPages
 }

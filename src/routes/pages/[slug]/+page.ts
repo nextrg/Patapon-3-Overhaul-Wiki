@@ -1,7 +1,7 @@
 import type { ComponentType } from 'svelte'
 
 export async function load({ fetch, params }) {
-	const posts = (await (await fetch('/api/posts')).json()) as {
+	const pages = (await (await fetch('/api/pages')).json()) as {
 		metadata: PageMeta
 		path: string
 	}[]
@@ -11,8 +11,8 @@ export async function load({ fetch, params }) {
 	const content = post.default as ComponentType
 	const metadata = post.metadata as PageMeta
 
-	const next = posts.find((p) => p.metadata.ord > metadata.ord)
-	const prev = posts.findLast((p) => p.metadata.ord < metadata.ord)
+	const next = pages.find((p) => p.metadata.ord > metadata.ord)
+	const prev = pages.findLast((p) => p.metadata.ord < metadata.ord)
 
 	return {
 		next,
