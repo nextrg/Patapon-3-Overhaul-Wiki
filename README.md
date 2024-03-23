@@ -1,3 +1,5 @@
+Archived, cause there is ongoing organization for the wiki
+https://github.com/p3o-wiki/p3o-wiki.github.io
 # Patapon 3 Overhaul Wiki
 ## Making pages
 To make a page, you have to:
